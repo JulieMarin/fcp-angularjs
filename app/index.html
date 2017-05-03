@@ -15,17 +15,34 @@
     <!-- Header.Navigation -->
     <header>
       <nav class="nav-bar">
+
         <div class="nb-width">
-          <a>
-            <img class="nb-logo" src="./images/rap_kudo_logo.png" alt="">
-            <div class="nb-motto">
+          <div class="nb-logo">
+            <a href="#" class="nb-logo-img">
+              <img src="./images/rap_kudo_logo.png" alt="">
+            </a>
+            <span class="nb-motto">
               <span>A Rails Angular Project</span><br>
               <span>Since 2 Weeks Ago</span>
-            </div>
-          </a>
-          <a><span>Home</span></a>
-          <a><span>Search</span></a>
+            </span>
+          </div>
+
+          <ul class="nb-links">
+            <li>
+              <a class="nb-link">Home</a>
+            </li>
+            <li>
+              <a class="nb-link">Login</a>
+            </li>
+            <li style="width: 200px">
+              <form class="nb-search">
+                <input type="text" name="search" placeholder="Search">
+              </form>
+            </li>
+          </ul>
+
         </div>
+
       </nav>
 
       <!-- Header.Promises Bar -->

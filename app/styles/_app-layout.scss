@@ -32,11 +32,23 @@ a:hover {
   }
 
   .nb-logo {
-    height: 100%;
+    @include frow-centered-col;
+    height: 45px;
+  }
+
+  .nb-logo-img {
+    width: 140px;
+    height: 45px;
+
+    & img {
+      max-width: 100%;
+      max-height: 100%;
+    }
   }
 
   .nb-motto {
     @include frow-centered-col;
+    cursor: default;
     align-items: flex-start;
     font-size: 0.85rem;
     padding: 0.3rem 0.8rem;
@@ -44,10 +56,40 @@ a:hover {
     border-left: solid 1px rgb(187, 187, 187);
   }
 
-  & a {
+  .nb-links {
     @include frow-def;
-    height: 45px;
+    align-items: center;
   }
+
+  .nb-link {
+    width: 100px;
+    display: block;
+    text-align: center;
+  }
+
+  .nb-search {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    input[type=text] {
+      width: 100px;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+      font-family: $open-sans;
+      padding: 6px 10px 6px 20px;
+      -webkit-transition: width 0.4s ease-in-out;
+      transition: width 0.4s ease-in-out;
+      margin: 0;
+    }
+
+    input[type=text]:focus {
+      width: 100%;
+    }
+
+  }
+
 }
 
 // HEADER.PROMISES BAR
