@@ -1,0 +1,195 @@
+//
+// Scaffolding
+// --------------------------------------------------
+
+
+// Reset the box-sizing
+*, :after, :before {
+    box-sizing: border-box;
+}
+
+// Remove tap highlight color
+* {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+// Links
+a {
+    color: $link-color;
+    text-decoration: none;
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: $link-hover-color;
+        text-decoration: $link-hover-decoration;
+    }
+
+    p & {
+      text-decoration: underline;
+    }
+}
+
+// SVGs
+svg {
+    display: block;
+}
+
+// Unordered lists
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+// List items
+li {
+    list-style-type: none;
+}
+
+@mixin button{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: none;
+    background-color: $gray-darker;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 100%;
+    outline: none;
+    padding: 9px;
+
+    &:hover, &:focus, &:active {
+        background-color: darken($gray-darker, 15%);
+        outline: none;
+        text-decoration: none;
+    }
+
+    &:active {
+        transform: scale(0.96);
+    }
+
+    &:disabled {
+        cursor: default !important;
+        opacity: 0.7;
+        box-shadow: none;
+    }
+}
+
+// Buttons
+button:not(.#{$reset}),
+[type="button"]:not(.#{$reset}),
+[type="reset"]:not(.#{$reset}),
+[type="submit"]:not(.#{$reset}) {
+    @include button;
+}
+
+input:not(.#{$reset})::-webkit-file-upload-button {
+    @include button;
+}
+
+input:not(.#{$reset})::-ms-browse {
+    @include button;
+}
+
+// Labels
+label:not(.#{$reset}) {
+    color: $gray-light;
+    display: block;
+    font-size: 14px;
+    padding: 4px 5px;
+}
+
+// Inputs
+input:not(.#{$reset}) {
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    border-bottom: 2px solid $gray-light;
+    color: $near-black;
+    display: block;
+    font-size: 15px;
+    margin-bottom: $form-bottom-margin;
+    padding: 4px 5px;
+    width: 100%;
+
+    &:hover, &:focus {
+        border-color: darken($gray-light, 15%);
+        outline: none;
+    }
+
+    &:disabled {
+        border-bottom: 1px dotted $gray-light;
+        cursor: default !important;
+    }
+
+    &[type=number] {
+        -moz-appearance:textfield;
+
+        &::-webkit-inner-spin-button,
+        &::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0
+        }
+    }
+
+    // button {
+    //     transform: scale(2);
+    // }
+}
+
+// Selects
+select:not(.#{$reset}) {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: transparent;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' version='1.1' xml:space='preserve' stroke-linejoin='round'><g transform='matrix(-0.613836,-7.51732e-17,7.51732e-17,-0.613836,19.9111,16.8669)'><path d='M12.9 2.9L22.7 12.9 3.1 12.9 12.9 2.9Z' fill='rgb(51,51,51)'/></g></svg>");
+    background-position: right center;
+    background-repeat: no-repeat;
+    display: block;
+    border: none;
+    border-bottom: 2px solid $gray-light;
+    border-radius: 0;
+    color: $near-black;
+    font-size: 15px;
+    height: 27px;
+    margin-bottom: $form-bottom-margin;
+    padding: 3px 24px 3px 5px;
+    width: 100%;
+
+    &:hover, &:focus {
+        border-color: darken($gray-light, 15%);
+    }
+
+    &:disabled {
+        border-bottom: 1px dotted $gray-light;
+        cursor: default !important;
+    }
+}
+
+// Textareas
+textarea:not(.#{$reset}) {
+    background: none;
+    border: none;
+    border-bottom: 2px solid $gray-light;
+    border-radius: 0;
+    color: $near-black;
+    display: block;
+    font-size: 15px;
+    margin-bottom: $form-bottom-margin;
+    min-height: 50px;
+    padding: 10px;
+    resize: vertical;
+    width: 100%;
+
+    &:hover, &:focus {
+        border-color: darken($gray-light, 15%);
+        outline: none;
+    }
+
+    &:disabled {
+        border-bottom: 1px dotted $gray-light;
+        cursor: default !important;
+    }
+}
