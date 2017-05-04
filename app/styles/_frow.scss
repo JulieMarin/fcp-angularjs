@@ -20,16 +20,20 @@
 
 @mixin frow-def {
   @extend .frow ;
+  flex-wrap: nowrap;
 }
 
 @mixin frow-btwn {
   @extend .frow, .justify-between ;
+  flex-wrap: nowrap;
 }
 
 @mixin frow-arnd {
   @extend .frow, .justify-around ;
+  flex-wrap: nowrap;
 }
 
 @mixin frow-centered-col {
   @extend .frow, .centered-column ;
+  flex-wrap: nowrap;
 }

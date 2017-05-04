@@ -7,38 +7,53 @@
     <title ng-bind="pageTitle"></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
-
     <link rel="stylesheet" href="css/main.css">
   </head>
   <body>
 
     <!-- Header.Navigation -->
     <header>
-      <nav class="nav-bar">
+      <nav id="nav-bar" class="nav container">
 
-        <div class="nb-width">
-          <div class="nb-logo">
-            <a href="#" class="nb-logo-img">
+        <div class="nav width">
+
+          <div class="nav logo">
+            <a href="#">
               <img src="./images/rap_kudo_logo.png" alt="">
             </a>
-            <span class="nb-motto">
-              <span>A Rails Angular Project</span><br>
-              <span>Since 2 Weeks Ago</span>
+            <span>
+              <div>A Rails Angular Project</div>
+              <div>Since 2 Weeks Ago</div>
             </span>
           </div>
 
-          <ul class="nb-links">
+          <ul class="nav links">
+
             <li>
-              <a class="nb-link">Home</a>
+              <a class="nav link">Home</a>
             </li>
+
             <li>
-              <a class="nb-link">Login</a>
+              <a class="nav link">Login</a>
             </li>
-            <li style="width: 200px">
-              <form class="nb-search">
-                <input type="text" name="search" placeholder="Search">
-              </form>
+
+            <li>
+              <div class="nav search">
+                <a href="#"><img src="./images/search-icon.png" alt="search"></a>
+                <span>
+                  <input type="text" name="" value="" placeholder="Search">
+                </span>
+              </div>
             </li>
+
+            <li>
+              <a class="nav link" href="#">
+                <div class="nav cart">
+                  <span>5</span>
+                </div>
+              </a>
+            </li>
+
           </ul>
 
         </div>

@@ -21,73 +21,100 @@ a:hover {
 
 // HEADER.NAVBAR
 
-.nav-bar {
-  @include gray-bttm-border;
+.nav {
 
-  .nb-width {
+  &.container {
+    @include gray-bttm-border;
+  }
+
+  &.width {
     @include app-width;
     @include frow-btwn;
     align-items: center;
     padding: 1rem 0;
   }
 
-  .nb-logo {
-    @include frow-centered-col;
+  &.logo {
     height: 45px;
-  }
-
-  .nb-logo-img {
-    width: 140px;
-    height: 45px;
-
-    & img {
-      max-width: 100%;
-      max-height: 100%;
-    }
-  }
-
-  .nb-motto {
-    @include frow-centered-col;
-    cursor: default;
-    align-items: flex-start;
-    font-size: 0.85rem;
-    padding: 0.3rem 0.8rem;
-    margin-left: 0.8rem;
-    border-left: solid 1px rgb(187, 187, 187);
-  }
-
-  .nb-links {
     @include frow-def;
     align-items: center;
+
+    & img {
+      height: 45px;
+    }
+
+    & span {
+      @include frow-centered-col;
+      align-items: flex-start;
+      word-wrap: break-word;
+      height: 100%;
+      margin-left: 1rem;
+      padding-left: 1rem;
+      border-left: 1px solid $accent-gray;
+      font-size: 0.87em;
+    }
+
   }
 
-  .nb-link {
-    width: 100px;
-    display: block;
-    text-align: center;
-  }
-
-  .nb-search {
-    display: flex;
+  &.links {
+    @include frow-def;
     align-items: center;
-    justify-content: flex-start;
+    height: 100%;
+  }
 
-    input[type=text] {
+  &.link {
+    @include frow-def;
+    align-items: center;
+    height: 45px;
+    width: 100px;
+  }
+
+  &.link:hover {
+    background: $midnight-gray;
+    color: $true-white;
+  }
+
+  &.search {
+    @include frow-def;
+    align-items: center;
+    & span {
+     width: 180px;
+    }
+
+    & input[type=text] {
       width: 100px;
       border: 2px solid #ccc;
       border-radius: 4px;
-      font-size: 1rem;
       font-family: $open-sans;
+      color: $dark-gray;
       padding: 6px 10px 6px 20px;
       -webkit-transition: width 0.4s ease-in-out;
       transition: width 0.4s ease-in-out;
-      margin: 0;
     }
 
-    input[type=text]:focus {
+    & input[type=text]:focus {
       width: 100%;
     }
 
+    & img {
+      height: 1.3rem;
+      margin: 0.25rem 0.5rem 0;
+    }
+  }
+
+  &.cart {
+    @include frow-def;
+    font-size: 0.87rem;
+    font-family: $open-sans-bold;
+    font-weight: 600;
+    color: $badge-red;
+    align-items: center;
+    height: 100%;
+    width: 30%;
+    background-image: url("../images/cart.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: -0.04rem 1.1rem;
   }
 
 }
