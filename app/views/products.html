@@ -1,0 +1,14 @@
+<section class="shop-layout">
+  <div class="sidebar">
+
+  </div>
+
+  <div class="product-tiles">
+    <products-grid
+      ng-repeat='product in catalog.products'
+      product="product"
+      image-url-base={{catalog.imageUrlBase}}
+    >
+    </products-grid>
+  </div>
+</section>

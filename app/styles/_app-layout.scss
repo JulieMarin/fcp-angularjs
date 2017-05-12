@@ -104,17 +104,18 @@ a:hover {
 
   &.cart {
     @include frow-def;
+    align-items: center;
     font-size: 0.87rem;
     font-family: $open-sans-bold;
     font-weight: 600;
     color: $badge-red;
-    align-items: center;
     height: 100%;
     width: 30%;
     background-image: url("../images/cart.svg");
     background-size: contain;
     background-repeat: no-repeat;
-    background-position: -0.04rem 1.1rem;
+    background-position: -0.04rem 0.8rem;
+    padding-bottom: 0.6rem;
   }
 
 }
@@ -155,6 +156,12 @@ a:hover {
 
 }
 
+.spacer-strip {
+  @include gray-bttm-border;
+  width: 100%;
+  height: 30px;
+}
+
 
 // MAIN VIEW
 .main-wrapper {
@@ -163,7 +170,7 @@ a:hover {
 
 // FOOTER
 footer {
-  height: 300px;
+  height: 120px;
   background: $midnight-gray;
 
   section {

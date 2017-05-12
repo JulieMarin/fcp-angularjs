@@ -11,13 +11,26 @@ function OnConfig($stateProvider, $locationProvider, $urlRouterProvider, $compil
   });
 
   $stateProvider
-    .state('Home', {
+    .state('main', {
       url: '/',
-      controller: 'ExampleCtrl as home',
-      templateUrl: 'home.html',
-      title: 'Home'
-    });
-
+      views: {
+        '': {
+          templateUrl: 'products.html',
+          controller: 'CatalogCtrl as catalog'
+        }
+      },
+      title: 'Main'
+    })
+    .state('products', {
+      url: '/products/:productName',
+      views: {
+        '': {
+          templateUrl: 'products.html',
+          controller: 'CatalogCtrl as catalog'
+        }
+      },
+      title: 'Products'
+    })
   $urlRouterProvider.otherwise('/');
 
 }

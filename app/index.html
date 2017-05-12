@@ -11,8 +11,7 @@
   </head>
   <body>
 
-    <!-- Header.Navigation -->
-    <header>
+    <header ng-controller="TestCtrl as test">
       <nav id="nav-bar" class="nav container">
 
         <div class="nav width">
@@ -49,7 +48,7 @@
             <li>
               <a class="nav link" href="#">
                 <div class="nav cart">
-                  <span>5</span>
+                  <span ng-bind="test.number"></span>
                 </div>
               </a>
             </li>
@@ -66,21 +65,21 @@
           <div class="pb-btns-container">
 
             <a class="pb-badge-btn">
-              <img src="./images/lifetime-badge.png" alt="">
+              <img src="./images/lifetime-badge.png" alt="Lifetime Trivialness">
               <span>
                 <div>Lifetime Trivialness</div>
               </span>
             </a>
 
             <a class="pb-badge-btn">
-              <img src="./images/shipping-badge.png" alt="">
+              <img src="./images/shipping-badge.png" alt="Free Shipping">
               <span>
                 <div>Free Shipping Over $9000</div>
               </span>
             </a>
 
             <a class="pb-badge-btn">
-              <img src="./images/returns-badge.png" alt="">
+              <img src="./images/returns-badge.png" alt="Returns">
               <span>
                 <div>All Day E'Era Day Returns</div>
               </span>
@@ -90,15 +89,16 @@
         </div>
       </section>
 
+      <div class="spacer-strip"></div>
+
     </header>
 
-    <div class='main-wrapper' ui-view></div>
+    <!-- //////////////// -->
+    <!-- VIEW ENTRY POINT -->
+    <div class="main-wrapper" ui-view=""><div>
+    <!-- //////////////// -->
+    <!-- //////////////// -->
 
-    <footer>
-      <section>
-        WRAP
-      </section>
-    </footer>
     <script src="js/main.js"></script>
   </body>
 </html>
