@@ -1,0 +1,30 @@
+<section id="product-specs" class="ps container">
+  <div class="ps gallery">
+    <span class="ps image-focused">
+      <img src="{{product.imageBaseUrl + product.images[0].large_url}}" alt="">
+    </span>
+
+    <ul class="ps alt-images">
+      <li ng-repeat="image in product.images">
+        <a>
+          <img src="{{product.imageBaseUrl + image.small_url}}" alt="">
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="ps info">
+    <div class="ps header">
+      <h2>{{product.name}}</h2>
+      <span>Product #: {{product.sku}}</span>
+    </div>
+
+    <span>In Stock: {{product.getAvailability()}}</span>
+    <form>
+      <input type="text" name="" value="{{product.quantity}}" ng-model="product.quantity">
+      <a ng-click="product.addToCart(product.id, product.quantity)" class="ps cart-button">
+        <span>Add To Cart</span>
+      </a>
+    </form>
+  </div>
+</section>

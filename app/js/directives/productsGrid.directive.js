@@ -5,7 +5,7 @@ function ProductsGrid() {
     templateUrl: 'directives/products-grid.html',
     scope: {
       product: '=',
-      imageUrlBase: '@'
+      imageUrlBase: '@',
     },
   };
 }

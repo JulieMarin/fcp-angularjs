@@ -21,15 +21,38 @@ function OnConfig($stateProvider, $locationProvider, $urlRouterProvider, $compil
       },
       title: 'Main'
     })
+
     .state('products', {
       url: '/products/:productName',
+      views: {
+        '': {
+          templateUrl: 'product-info.html',
+          controller: 'ProductCtrl as product'
+        }
+      },
+      title: 'Products'
+    })
+
+    .state('search', {
+      url: '/products/search/:query',
       views: {
         '': {
           templateUrl: 'products.html',
           controller: 'CatalogCtrl as catalog'
         }
       },
-      title: 'Products'
+      title: 'Search Results'
+    })
+
+    .state('cart', {
+      url: '/cart',
+      views: {
+        '': {
+          templateUrl: 'cart.html',
+          controller: 'CartCtrl as cart'
+        }
+      },
+      title: 'Your Cart'
     })
   $urlRouterProvider.otherwise('/');
 

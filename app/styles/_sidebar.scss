@@ -1,0 +1,43 @@
+// SIDEBAR
+.sb {
+  color: white;
+
+  &.header {
+    @include frow-def;
+    @include gray-bttm-border;
+    align-items: center;
+    justify-content: flex-start;
+    background: #212121;
+    height: 8rem;
+
+    & h2 {
+      font-size: 1.5rem;
+    }
+  }
+
+  & a, a:hover, a:focus, a:active {
+    color: white;
+    text-decoration: none;
+  }
+
+  & h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    padding: 0rem 2rem;
+  }
+
+  &.container {
+    width: 30%;
+    height: 80vh;
+    background: $near-black;
+  }
+
+  &.list-container {
+    padding: 0.5rem 2rem;
+
+    & li {
+      line-height: 1.5;
+    }
+  }
+
+}

@@ -1,7 +1,8 @@
-function CatalogCtrl(ProductsService, AppSettings) {
+function CatalogCtrl(ProductsService, AppSettings, $stateParams) {
   'ngInject';
 
   const vm = this;
+  var query = $stateParams.query || '';
   vm.imageUrlBase = AppSettings.cdnBaseUrl;
   vm.products = {};
   vm.count = null;
@@ -10,12 +11,8 @@ function CatalogCtrl(ProductsService, AppSettings) {
   vm.perPage = null;
   vm.pages = null;
 
-  function generateProductTiles(products) {
-
-  }
-
   function init() {
-    ProductsService.getProducts()
+    ProductsService.getProducts(query)
       .then(function(data) {
         vm.products = data.products;
         vm.count = data.count;

@@ -1,9 +1,28 @@
 <section class="shop-layout">
-  <div class="sidebar">
+  <div id="sidebar" class="sb container" ng-controller="SidebarCtrl as sidebar">
+    <div class="sb header">
+      <h2>My Placeholder</h2>
+    </div>
+    <h2>Shop By Category</h2>
+    <ul class="sb list-container">
+      <a href="#" ng-repeat="category in sidebar.taxons.categories">
+        <li>▸{{category}}</li>
+      </a>
+    </ul>
 
+    <h2>Shop By Brand</h2>
+    <ul class="sb list-container">
+      <a href="#" ng-repeat="brand in sidebar.taxons.brands">
+        <li>▸{{brand}}</li>
+      </a>
+    </ul>
   </div>
 
-  <div class="product-tiles">
+  <div id="product-tiles" class="pts">
+    <h2>All Items</h2>
+    <div class="pts banner">
+      <img src="../images/angular_banner.png" alt="angular">
+    </div>
     <products-grid
       ng-repeat='product in catalog.products'
       product="product"

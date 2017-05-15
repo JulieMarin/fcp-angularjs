@@ -29,7 +29,9 @@
     "deploy": "cross-env NODE_ENV=production ./node_modules/.bin/gulp deploy",
     "test": "cross-env NODE_ENV=test ./node_modules/.bin/gulp test",
     "protractor": "cross-env NODE_ENV=test ./node_modules/.bin/gulp protractor",
-    "unit": "cross-env NODE_ENV=test ./node_modules/.bin/gulp unit"
+    "unit": "cross-env NODE_ENV=test ./node_modules/.bin/gulp unit",
+    "postinstall": "gulp prod",
+    "start": "node index.js"
   },
   "dependencies": {
     "cross-env": "^3.1.1",

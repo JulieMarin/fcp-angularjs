@@ -11,13 +11,13 @@
   </head>
   <body>
 
-    <header ng-controller="TestCtrl as test">
+    <header ng-controller="HeaderCtrl as header">
       <nav id="nav-bar" class="nav container">
 
         <div class="nav width">
 
           <div class="nav logo">
-            <a href="#">
+            <a ui-sref="main">
               <img src="./images/rap_kudo_logo.png" alt="">
             </a>
             <span>
@@ -29,7 +29,7 @@
           <ul class="nav links">
 
             <li>
-              <a class="nav link">Home</a>
+              <a ui-sref="main" class="nav link">Home</a>
             </li>
 
             <li>
@@ -40,15 +40,17 @@
               <div class="nav search">
                 <a href="#"><img src="./images/search-icon.png" alt="search"></a>
                 <span>
-                  <input type="text" name="" value="" placeholder="Search">
+                  <form ng-submit="header.searchProducts(header.searchTerm)">
+                    <input ng-model="header.searchTerm" type="text" placeholder="Search">
+                  </form>
                 </span>
               </div>
             </li>
 
             <li>
-              <a class="nav link" href="#">
+              <a class="nav link" ui-sref="cart">
                 <div class="nav cart">
-                  <span ng-bind="test.number"></span>
+                  <span>{{header.cart.size}}</span>
                 </div>
               </a>
             </li>

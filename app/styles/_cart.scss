@@ -1,0 +1,35 @@
+table {
+  border-collapse: collapse;
+  margin: 3rem auto;
+  text-align: center;
+
+  & tr {
+    border-bottom: solid 1px $gray-lighter;
+  }
+
+  & td, th {
+    padding: 1rem 2rem;
+  }
+
+  & input {
+    width: 20%;
+  }
+}
+
+.ct {
+  width: 50px;
+
+  &.image {
+    max-width: 100%;
+  }
+
+  &.remove-button {
+    color: $ruby-red;
+    font-family: "OpenSans-Bold";
+    font-size: 1.25rem;
+  }
+
+  &.totals {
+    font-family: "OpenSans-Bold";    
+  }
+}

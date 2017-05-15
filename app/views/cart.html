@@ -1,0 +1,36 @@
+<table id="cart-table">
+  <tr>
+    <th>Image</th>
+    <th>Item</th>
+    <th>Price</th>
+    <th>Quantity</th>
+    <th>Total</th>
+    <th></th>
+  </tr>
+
+  <tr ng-repeat="item in cart.cart.items">
+    <td class="ct image">
+      <a ui-sref="products({ productName: item.variant.slug })">
+        <img src="{{cart.baseURL + item.variant.images[0].small_url}}" alt="">
+      </a>
+    </td>
+    <td>{{item.variant.name}}</td>
+    <td>{{item.single_display_amount}}</td>
+    <td>
+      <input type="number" value="{{item.quantity}}">
+    </td>
+    <td>{{item.display_amount}}</td>
+    <td>
+      <a class="ct remove-button" ng-click="cart.removeItem(item.variant.id)">X</a>
+    </td>
+  </tr>
+
+  <tr class="ct totals">
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>Total</td>
+    <td>{{cart.cart.cartTotal}}</td>
+    <td></td>
+  </tr>
+</table>

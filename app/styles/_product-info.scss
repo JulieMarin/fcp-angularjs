@@ -1,0 +1,70 @@
+// PRODUCT SPECS
+.ps {
+
+  &.container {
+    @include frow-def;
+    margin: 2rem 0rem;
+  }
+
+  &.gallery {
+    width: 42%;
+  }
+
+  &.image-focused {
+    display: block;
+    height: 350px;
+    & img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+
+  &.alt-images {
+    @include frow-def;
+    justify-content: flex-start;
+
+    & li {
+      margin: 0 0.25rem;
+      border: 1px solid $gray-outline;
+    }
+  }
+
+  &.info {
+    @include frow-centered-col;
+    align-items: flex-start;
+    height: 200px;
+    width: 58%;
+  }
+
+  &.header {
+    @include gray-bttm-border;
+    padding: 1rem 0rem;
+    width: 100%;
+
+    & h2 {
+      font-family: "OpenSans-Bold";
+      font-size: 1.5rem;
+    }
+
+    & span {
+      color: $ruby-red;
+    }
+  }
+
+  & form {
+    @include frow-def;
+    margin: 2rem 0rem;
+
+    & input {
+      width: 2rem;
+      margin-right: 0.25rem;
+    }
+  }
+
+  &.cart-button {
+    color: white;
+    background: $ruby-red;
+    padding: 0.5rem;
+    border-radius: 5%;
+  }
+}
